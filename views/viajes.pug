@@ -1,6 +1,17 @@
 extends ./layout/index
 
 block contenido
+
+    h1= pagina 
     main.container.mt-5
-        .row
-            h1= pagina 
+        .row.proximos-viajes
+            each item in resultado
+                .col-md-6.col-lg-4.mb-4 
+                    .card 
+
+                    .card-body 
+                        h2= item.titulo
+    
+    
+        
+            

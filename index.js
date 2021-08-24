@@ -4,8 +4,16 @@
 //actualmente  ya se pueden utilizar modulos e imports nativos de js. Hay que habilitarlo en el packaje.json con"type":"module"
 import express from 'express'
 import router from './routes/routes.js' // en la nueva versión con los imports, hayq eu colocar la extensión del archivo
+import db from './config/db.js'
 
 const app = express()
+
+// conectar la BBDD
+db.authenticate()
+    .then(() => console.log('Base de datos conectada'))
+    .catch(error=> console.log(error));
+    
+    
 
 // Definimos el puerto. Al hacer el deploy, el port será el que asgine el depliegue, porque nose sabe cual estará disponible, al estar en local, la variable .env.port no existe, por tanto correremos sonre el puerto 4000
 const port = process.env.port || 4000

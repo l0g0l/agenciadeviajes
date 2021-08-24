@@ -1,0 +1,21 @@
+queries SQL
+
+CREATE TABLE `viajes` (
+  `id` bigint(20) NOT NULL,
+  `titulo` varchar(60) DEFAULT NULL,
+  `precio` varchar(10) DEFAULT NULL,
+  `fecha_ida` date DEFAULT NULL,
+  `fecha_vuelta` date DEFAULT NULL,
+  `imagen` varchar(15) DEFAULT NULL,
+  `descripcion` text DEFAULT NULL,
+  `disponibles` int(11) DEFAULT NULL,
+  `slug` varchar(20) DEFAULT NULL
+);
+ 
+INSERT INTO `viajes` (`id`, `titulo`, `precio`, `fecha_ida`, `fecha_vuelta`, `imagen`, `descripcion`, `disponibles`, `slug`) VALUES
+(1, 'Italia', '50000', '2021-06-24', '2021-06-30', 'roma', 'Praesent tincidunt ante at justo semper volutpat. Sed risus neque, scelerisque id dictum in, placerat non erat. ', 32, 'viaje-italia'),
+(2, 'Canada', '60000', '2021-07-19', '2021-07-19', 'canada', 'Praesent tincidunt ante at justo semper volutpat. Sed risus neque, scelerisque id dictum in, placerat non erat. ', 25, 'viaje-canada'),
+(3, 'Grecia', '40000', '2021-08-29', '2021-09-15', 'grecia', 'Praesent tincidunt ante at justo semper volutpat. Sed risus neque, scelerisque id dictum in, placerat non erat. ', 18, 'viaje-grecia'),
+(4, 'Inglaterra', '8000', '2021-09-22', '2021-10-03', 'londres', 'Praesent tincidunt ante at justo semper volutpat. Sed risus neque, scelerisque id dictum in, placerat non erat. ', 22, 'viaje-inglaterra'),
+(5, 'Rio de Janeiro', '50000', '2021-04-16', '2021-04-25', 'rio', 'Praesent tincidunt ante at justo semper volutpat. Sed risus neque, scelerisque id dictum in, placerat non erat. ', 23, 'viaje-rio-de-janeiro'),
+(6, 'Francia', '75000', '2021-04-03', '2021-04-10', 'paris', 'Praesent tincidunt ante at justo semper volutpat. Sed risus neque, scelerisque id dictum in, placerat non erat. ', 14, 'viaje-francia');
