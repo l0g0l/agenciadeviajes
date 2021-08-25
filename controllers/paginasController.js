@@ -22,7 +22,7 @@ console.log(todosLosViajes); // para ver este CL debo navegar a la url de /viaje
 
 
     res.render('viajes', {
-        pagina: 'Viajes',
+        pagina: 'Próximos Viajes',
         resultado: todosLosViajes
     })
 }
@@ -33,9 +33,30 @@ const paginaTestimonios = (req, res) => {
     })
 }
 
+const paginaDetalleViaje = async (req, res) => {
+   /*  utilizamos el req.params para obtener información de un elemento de un catálogo de colecciones, por ejemplo si tuvieras una API donde /collections te da el listado de colecciones. Pero queremos ver mas información a detalle un elemento la url sería /collections/5 donde internamente nuestro path es /collections/:id, entonces a través de req.params podemos obtener el valor de id => req.params.id.
+  console.log(req.params);  */
+
+  const {slug} = req.params
+  //con where va a buscar en BBDD donde el slug sea igual a p.e.rio-janeiro (según el botón de Mas info que pinchemos) y lo va a guardar en la variable resultado
+  try {
+      const viaje = await Viaje.findOne({where: {slug: slug}})
+      console.log(viaje)
+      res.render('detalleViaje', {
+          pagina: 'Información Viaje',
+          viaje: viaje
+      })
+
+  }catch (e){
+      console.log(e);
+  }
+  
+}
+
 export {
     paginaInicio,
     paginaNosotros,
     paginaViajes,
-    paginaTestimonios
+    paginaTestimonios,
+    paginaDetalleViaje
 }
