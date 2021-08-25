@@ -1,9 +1,38 @@
 extends ./layout/index
 
+block slider
+    .slider
+        h1 Río de Janeiro
+        em aventura
+
 block contenido
     main.container.mt-5
-        .row
-            h1= pagina 
-//- //Dos formas de pasar una variable de JS en PUG
-//- p= textoViajes 
-//- p #{textoViajes}
+        h2.text-center.mb-5 Sobre Nosotros
+        .row.mb-5
+            .col-md-6 
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a turpis laoreet tellus aliquam tincidunt. In elementum augue urna, non gravida leo pulvinar sit amet. Donec tempus diam eget mauris dignissim, a dapibus libero pulvinar. Etiam ultrices, est vitae ornare ullamcorper, lacus quam gravida nisl, nec condimentum magna mauris sit amet nisi. Donec sodales pulvinar posuere. Maecenas urna lacus, aliquam eu lobortis in, placerat eu est. Vestibulum ipsum nunc, posuere ut placerat sed, suscipit et lorem. endum nunc, nec hendrerit tortor vulputate a. Donec eget aliquam ligula. Nam a feugiat quam.
+                p Nunc placerat, lorem nec porta pharetra, eros lorem molestie ex, vel consectetur lectus erat id purus. Phasellus sed eros facilisis, placerat libero eget, pellentesque orci. Quisque rhoncus nulla vel lorem ornare, sed gravida leo aliquet.
+            .col-md-6
+                img(src="/img/inicio_nosotros.jpg", alt="imagen terraza de verano", class="img-fluid" )
+
+        //- con esto probamos a ver si se ve bien en pa pag p= JSON.stringify(viajes)
+
+        //- con el partial include lo que hacemos es que, como tanto la pag de viajes como la de inicio necesitan mostrar la misma info, creamos un partial en un archivo a parte (bloque_viajes) y lo mostramos tanto en viajes como en inicio. De este modo si tengo que cambiar algo, solo lo hago en un rachivo, mucho más fácil de mantener
+        include ./layout/bloque_viajes
+    
+    .descuento
+        .container
+            .row 
+                .col-md-6 
+                    .contenido 
+                        h3 5% de Descuento 
+                        p.titulo Viaje a Canada 
+                        p.fecha 20 de Marzo de 2022 - 28 de Marzo de 2022
+                        p.precio 2.500€
+
+    .container 
+        h2.mt-5.text-center Testimonios 
+
+        include ./layout/bloque_testimonios
+
+

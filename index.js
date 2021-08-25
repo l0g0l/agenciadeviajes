@@ -5,6 +5,8 @@
 import express from 'express'
 import router from './routes/routes.js' // en la nueva versión con los imports, hayq eu colocar la extensión del archivo
 import db from './config/db.js'
+import dotenv from 'dotenv';
+dotenv.config({path:"variables.env"});
 
 const app = express()
 
@@ -15,8 +17,11 @@ db.authenticate()
     
     
 
-// Definimos el puerto. Al hacer el deploy, el port será el que asgine el depliegue, porque nose sabe cual estará disponible, al estar en local, la variable .env.port no existe, por tanto correremos sonre el puerto 4000
-const port = process.env.port || 4000
+// Definimos el puerto. Al hacer el deploy, el port será el que asgine el depliegue, porque no se sabe cual estará disponible, al estar en local, la variable .env.port no existe, por tanto correremos sonre el puerto 4000
+const port = process.env.PORT || 4000
+const host = process.env.HOST || '0.0.0.0'
+
+
 
 // -----------MIDDELWARES--------
 
@@ -50,7 +55,7 @@ app.use('/', router)
 
 
 // arranca el servidor
-app.listen(port, () => {
+app.listen(port, host, () => {
     console.log(`Server conenected in the port ${port}`);
 
 })

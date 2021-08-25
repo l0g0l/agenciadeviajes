@@ -9,10 +9,11 @@ html(lang="en")
         title #{nombreSitio} | #{pagina}
         link(rel="stylesheet", href="/css/bootstrap.css")
         link(rel="stylesheet", href="/css/style.css")
-    body 
+    //- esta class= clase, es ta clase es la variable del obj de paginasController, en el render de paginaInicio, es la clase home del CSS
+    body(class= clase) 
         //- con include hacemos que es este archivo "master" que está een layout y a su vez dentro de views, se muestren el header y el footer en todas las rutas
         include header 
-        //- con blcok hacemos que , desde aqui, se muestren todas las vistas, hay que acer un extends en cada una de ellas (extends ./layout/index)
+        //- con block hacemos que , desde aqui, llamamos a todas las vistas que tengan un extends en cada una de ellas (extends ./layout/index)
+        block slider 
         block contenido 
-
         include footer 

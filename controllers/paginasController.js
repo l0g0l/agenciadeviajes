@@ -4,10 +4,32 @@ import {Viaje} from '../models/Viaje.js' // importamos el modelo que hemos defin
 import {Testimonios} from '../models/Testimonios.js' // importamos el modelo que hemos definido en models
 
 
-const paginaInicio = (req, res) => { //req: lo que enviamos  res: lo que Express nos responde (si el usuario está autenticado, si falló la autenticación etc...)
-    res.render('archivopug', { // al render le pasas el nombre del archivo pug que quieras mostrar y también le puedes pasar un obj, la variable del objeto es la que mostrará, esa variable estará en cada uno de los pug
-        pagina: 'Inicio'
-    })
+const paginaInicio = async (req, res) => { //req: lo que enviamos  res: lo que Express nos responde (si el usuario está autenticado, si falló la autenticación etc...)
+
+    //consultar 3 viajes del modelo Viaje. Con el async await se bloquea el código, es decir, el 1er await bloquea la línea siguiente hasta que la primera se ha ejecutado, por tanto no se mostrarán en el res.render ni resultado ni testimonios hasta que, realmente, se hayan obtenidos los datos con los await. Es una buena manera de. cuando estás consultando una BBDD no renderizar nada antes de que se hayan cargado todos los datos, pero, en este caso, nos interesa que ambas solicitudes a la BBDD se ejecuten al mismo tiempo, por tanto cambio el código. Esto mejora muchísimo el performance
+     const promiseDB = []
+
+     promiseDB.push(Viaje.findAll({limit: 3})) // sería la posición 0 del array
+     promiseDB.push(Testimonios.findAll({limit: 3})) // sería la posición 1 del array
+     
+
+    try {
+     /*    const resultado = await Viaje.findAll({limit: 3})
+        const testimonios = await Testimonios.findAll({limit: 3}) //renderizamos en el inicio solo 3 testimonios */
+
+        const resultado = await Promise.all(promiseDB) // arrancan ambas solicitudes al mismo tiempo
+
+        res.render('archivopug', { // al render le pasas el nombre del archivo pug que quieras mostrar y también le puedes pasar un obj, la variable del objeto es la que mostrará, esa variable estará en cada uno de los pug
+            pagina: 'Inicio',
+            clase: 'home',
+            viajes: resultado[0], //objet literal
+            testimonios: resultado[1]
+        })
+
+    }catch (e) {
+        console.log(e);
+        
+    }   
 }
 
 const paginaNosotros = (req, res) => {
