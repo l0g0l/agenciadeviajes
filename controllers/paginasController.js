@@ -17,13 +17,13 @@ const paginaInicio = async (req, res) => { //req: lo que enviamos  res: lo que E
      /*    const resultado = await Viaje.findAll({limit: 3})
         const testimonios = await Testimonios.findAll({limit: 3}) //renderizamos en el inicio solo 3 testimonios */
 
-        const resultado = await Promise.all(promiseDB) // arrancan ambas solicitudes al mismo tiempo
+        const viajes = await Promise.all(promiseDB) // arrancan ambas solicitudes al mismo tiempo
 
         res.render('archivopug', { // al render le pasas el nombre del archivo pug que quieras mostrar y también le puedes pasar un obj, la variable del objeto es la que mostrará, esa variable estará en cada uno de los pug
             pagina: 'Inicio',
             clase: 'home',
-            viajes: resultado[0], //objet literal
-            testimonios: resultado[1]
+            viajes: viajes[0], //objet literal
+            testimonios: viajes[1]
         })
 
     }catch (e) {
@@ -41,13 +41,13 @@ const paginaNosotros = (req, res) => {
 // vamos a pasar los viajes hacia la vista del MVC. el método.finAll() nos devuelve un array
 const paginaViajes = async (req, res) => {
 //consutar BBDD
-const todosLosViajes= await Viaje.findAll() //Viaje es el modelo de la BBDD en models
-console.log(todosLosViajes); // para ver este CL debo navegar a la url de /viajes
+const viajes= await Viaje.findAll() //Viaje es el modelo de la BBDD en models
+console.log(viajes); // para ver este CL debo navegar a la url de /viajes
 
 
     res.render('viajes', {
         pagina: 'Próximos Viajes',
-        resultado: todosLosViajes
+        viajes, //objet literal
     })
 }
 
