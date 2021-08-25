@@ -145,11 +145,11 @@ i {
     font-size: 2rem;
 }
 
-.testimoniales p{
+.testimonios p{
     font-size: .8rem;
     font-weight: normal;
 }
-.testimoniales p::before {
+.testimonios p::before {
     background-image: url(../img/quote.jpg);
     background-repeat: no-repeat;
     background-position: center center;

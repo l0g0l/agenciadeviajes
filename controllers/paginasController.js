@@ -1,6 +1,8 @@
 // el controlador es el que le pasa los datos a la vista para que lo muestre
 
 import {Viaje} from '../models/Viaje.js' // importamos el modelo que hemos definido en models
+import {Testimonios} from '../models/Testimonios.js' // importamos el modelo que hemos definido en models
+
 
 const paginaInicio = (req, res) => { //req: lo que enviamos  res: lo que Express nos responde (si el usuario está autenticado, si falló la autenticación etc...)
     res.render('archivopug', { // al render le pasas el nombre del archivo pug que quieras mostrar y también le puedes pasar un obj, la variable del objeto es la que mostrará, esa variable estará en cada uno de los pug
@@ -14,7 +16,7 @@ const paginaNosotros = (req, res) => {
     })
 }
 
-// vamos a psar los viajes hacia la vista del MVC
+// vamos a pasar los viajes hacia la vista del MVC. el método.finAll() nos devuelve un array
 const paginaViajes = async (req, res) => {
 //consutar BBDD
 const todosLosViajes= await Viaje.findAll() //Viaje es el modelo de la BBDD en models
@@ -27,10 +29,20 @@ console.log(todosLosViajes); // para ver este CL debo navegar a la url de /viaje
     })
 }
 
-const paginaTestimonios = (req, res) => {
-    res.render('testimonios', {
-        pagina: 'Testimonios'
-    })
+//le ponemos async ya que vamos a ostrar datos de la BBDD y esto no sabemos cuánto tiempo puee tarder, también tiene que utilizar un try catch. el método.finAll() nos devuelve un array
+const paginaTestimonios = async (req, res) => {
+    try {
+        const testimonios = await Testimonios.findAll()
+        res.render('testimonios', {
+            pagina: 'Testimonios',
+            testimonios //objet literal testimonios: testimonios
+        })
+
+    }catch (e) {
+        console.log(e);
+        
+    }
+  
 }
 
 const paginaDetalleViaje = async (req, res) => {
