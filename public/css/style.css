@@ -8,7 +8,7 @@ body {
 }
 h1, h2, h3 {
     font-family: 'Staatliches', cursive;
-    color: #15B9D5;
+    color: #3383FF;
 }
 h1 {
     font-size: 3.4rem;
@@ -79,7 +79,7 @@ p {
     line-height: 2;
 }
 .navegacion {
-    background-color: #15B9D5;
+    background-color: #3383FF;
 }
 header .nav a {
     font-family: 'Staatliches', cursive;

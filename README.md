@@ -5,14 +5,13 @@
 
 <h4 align="center">Agencia de Viajes</h4>
   <p align="center">
-    <a href="https://dontwasteapp.herokuapp.com/">View Web Application</a>
+    <a href="https://pure-savannah-13335.herokuapp.com/">View Web Application</a>
   </p>
   <p align="center">
-<img src="https://www.codefactor.io/repository/github/l0g0l/dont_waste/badge" alt="Codefactor Grade">
+<img src="https://www.codefactor.io/repository/github/l0g0l/agenciadeviajes/badge" alt="Codefactor Grade">
 </p>
 <p align="center">
-<img src="https://sonarcloud.io/api/project_badges/measure?project=l0g0l_dont_waste&metric=alert_status
-" alt="Sonar Quality Gate"></p>
+<img src="https://sonarcloud.io/api/project_badges/measure?project=l0g0l_agenciadeviajes&metric=alert_status" alt="Sonar Quality Gate"></p>
 
 </p>
 
