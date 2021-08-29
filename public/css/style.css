@@ -1,10 +1,10 @@
 :root {
     font-family: 'Staatliches', cursive;
     font-family: 'Covered By Your Grace', cursive;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 h1, h2, h3 {
     font-family: 'Staatliches', cursive;
@@ -86,10 +86,14 @@ header .nav a {
     font-size: 2rem;
     color: white;
 }
-footer .nav a,
-.copyright {
+footer .nav a {
     font-family: 'Staatliches', cursive;
     font-size: 1.6rem;
+    color: black;
+}
+.copyright {
+    font-family: 'Staatliches', cursive;
+    font-size: 1rem;
     color: black;
 }
 .listado-iconos {
@@ -133,7 +137,7 @@ footer .nav a,
     font-size: 2.4rem;
 }
 .descuento .precio {
-    color: #15B9D5;
+    color: #fff;
     font-size: 3rem;
 }
 
@@ -146,7 +150,7 @@ i {
 }
 
 .testimonios p{
-    font-size: .8rem;
+    font-size: 1.5rem;
     font-weight: normal;
 }
 .testimonios p::before {
