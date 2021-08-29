@@ -14,6 +14,10 @@
 <img src="https://sonarcloud.io/api/project_badges/measure?project=l0g0l_agenciadeviajes&metric=alert_status" alt="Sonar Quality Gate"></p>
 
 </p>
+<p align="center">
+<img src="public/img/accesibilidad.png" alt="Accesibility Rate" width="500"></p>
+
+</p>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -71,8 +75,7 @@ npm start
 
 ## About The Project
 
-Creation of a recipe web app (mobile first) whose search engine provides recipes according to the ingredient(s) you select and you can also filter by the type of food you want as well as allergens.
-The application aims to ensure that food we have at home is not wasted, therefore, you can enter the ingredients in the search engine and it will return a series of recipes that contain them.
+Creation of a Travel Agency web, you can add opinions about your holidays experience. This proyect it's sopported with Node-Express and SQL with Sequelize BBDD. It's responsive
 
 
 ### Requirements  
