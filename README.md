@@ -43,6 +43,18 @@ npm install pug
 
  PUG, is a Javascript library that was previously known as JADE. It is an easy-to-code template engine used to code HTML in a more readable fashion. One upside to PUG is that it equips developers to code reusable HTML documents by pulling data dynamically from the API. 
 
+ ### [Bootstrap](https://getbootstrap.com/)  
+
+npm i bootstrap  
+
+Bootstrap is a potent front-end framework used to create modern websites and web apps. It's open-source and free to use, yet features numerous HTML and CSS templates for UI interface elements such as buttons and forms. Bootstrap also supports JavaScript extensions.  
+
+### [Sequelize](https://sequelize.org/)  
+
+npm i --save sequelize  
+
+Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
+
 
 ### Prerequisites
 

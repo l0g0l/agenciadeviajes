@@ -3,7 +3,7 @@
 
 //actualmente  ya se pueden utilizar modulos e imports nativos de js. Hay que habilitarlo en el packaje.json con"type":"module"
 import express from 'express'
-import router from './routes/routes.js' // en la nueva versión con los imports, hayq eu colocar la extensión del archivo
+import router from './routes/routes.js' // en la nueva versión con los imports, hay que colocar la extensión del archivo
 import db from './config/db.js'
 import dotenv from 'dotenv';
 dotenv.config({path:"variables.env"});
